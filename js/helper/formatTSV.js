@@ -2,7 +2,8 @@ const formatTsv = (data) => {
   let lines = data.split("\n");
   let res = [];
   let headers = lines[0].split("\t");
-
+  console.log("Lines");
+  console.log(lines.length)
   for (var i = 1; i < lines.length; i++) {
     var obj = {};
     var currentline = lines[i].split("\t");
