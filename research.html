@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>MarCE Lab.</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta content="Free HTML Templates" name="keywords" />
+    <meta content="Free HTML Templates" name="description" />
+
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon" />
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;700&family=Roboto:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Icon Font Stylesheet -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet" />
+    <link
+      href="lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet" />
+  </head>
+
+  <body>
+    <!-- Navbar Start -->
+    <div id="navbar"></div>
+    <!-- Navbar End -->
+
+    <div
+      class="container-fluid main-contain"
+      style="padding: 5rem 0"
+      id="researchCard"
+    >
+      <div class="container" style="flex: 1; display: none" id="main">
+        <div class="text-center mx-auto mb-5">
+          <h1 class="block-title">What we do in MarCE Lab.</h1>
+        </div>
+        <div
+          class="d-flex flex-column flex-lg-row justify-content-center align-items-center"
+        >
+          <div
+            class="bg-white rounded text-center m-2 mx-4"
+            style="max-width: min-content"
+          >
+            <div class="position-relative index-column">
+              <img
+                class="img-fluid rounded-top topic-img"
+                src="img/tensegritynanolattices.webp"
+                alt=""
+              />
+            </div>
+            <div class="text-center py-5 px-2 column-text card-border">
+              <p>Metamaterial Design and Discovery</p>
+              <a
+                href="research.html?Metamaterial"
+                class="btn rounded-pill py-2 px-4 learn-more"
+                >Learn more</a
+              >
+            </div>
+          </div>
+          <div
+            class="bg-white rounded text-center m-2 mx-4"
+            style="max-width: min-content"
+          >
+            <div class="position-relative index-column">
+              <img
+                class="img-fluid rounded-top topic-img"
+                src="img/landscape-silver-modern-power-tower-cloudy-sky.webp"
+                alt=""
+              />
+            </div>
+            <div class="text-center py-5 px-2 column-text card-border">
+              <p>Artificial Intelligence in Civil Engineering</p>
+              <a
+                href="research.html?Artificial"
+                class="btn rounded-pill py-2 px-4 learn-more"
+                >Learn more</a
+              >
+            </div>
+          </div>
+          <div
+            class="bg-white rounded text-center m-2 mx-4"
+            style="max-width: min-content"
+          >
+            <div class="position-relative index-column">
+              <img
+                class="img-fluid rounded-top topic-img"
+                src="img/3d-science-modern-network-communications-background.webp"
+                alt=""
+              />
+            </div>
+            <div class="text-center py-5 px-2 column-text card-border">
+              <p>Resource-efficient Learning Algorithms</p>
+              <a
+                href="research.html?Resource"
+                class="btn rounded-pill py-2 px-4 learn-more"
+                >Learn more</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="container" style="flex: 1" id="sub">
+        <div class="text-center mx-auto mb-5">
+          <h1 class="block-title sub-title" id="sub-title"></h1>
+        </div>
+        <div class="d-flex row justify-content-between" id="items"></div>
+      </div>
+    </div>
+
+    <!-- partOfResearch Start -->
+    <div
+      class="container-fluid py-5 main-contain"
+      style="display: none"
+      id="partOfResearch"
+    >
+      <div class="container d-flex flex-row" style="flex: 1">
+        <div style="margin-right: 2em; max-width: 55vw">
+          <div class="mx-auto mb-3">
+            <p class="d-inline-block page-title" id="subject"></p>
+          </div>
+          <h2 id="articalName"></h2>
+          <div id="articalImg" class="my-4"></div>
+          <p id="articalContent"></p>
+          <a id="atricalLink"></a>
+        </div>
+        <div class="d-flex flex-column">
+          <div>
+            <div class="mx-auto mb-3">
+              <p class="d-inline-block page-title">Other Research</p>
+            </div>
+            <div id="otherResearch"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- partOfResearch End -->
+
+    <!-- Footer Start -->
+    <div id="footer"></div>
+    <!-- Footer End -->
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"
+      ><i class="bi bi-arrow-up"></i
+    ></a>
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="lib/tempusdominus/js/moment.min.js"></script>
+    <script src="lib/tempusdominus/js/moment-timezone.min.js"></script>
+    <script src="lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+    <script src="js/helper/formatTSV.js"></script>
+    <script src="js/helper/convertImageUrl.js"></script>
+    <script src="js/helper/trimText.js"></script>
+  </body>
+  <script>
+    $(function () {
+      $("#navbar").load("navbar.html");
+      $("#footer").load("footer.html");
+
+      $("#main").hide();
+      $("#partOfResearch").hide();
+
+      if (!window.location.href.split("?")[1]) {
+        $("#researchCard").show();
+        $("#main").show();
+        return;
+      }
+
+      $("#sub").show();
+
+      if (window.location.href.split("?")[1].split("&")[1]) {
+        $("#researchCard").hide();
+        $("#partOfResearch").show();
+      }
+
+      const mapTitle = [
+        {
+          key: "Metamaterial",
+          title: "Metamaterial Design and Discovery",
+        },
+        {
+          key: "Artificial",
+          title: "Artificial Intelligence in Civil Engineering",
+        },
+        {
+          key: "Resource",
+          title: "Resource-efficient Learning Algorithms",
+        },
+      ];
+
+      $.ajax({
+        type: "GET",
+        url: "file/research.tsv",
+        success: function (data) {
+          let list = JSON.parse(formatTsv(data));
+          if (window.location.href.split("?")[1]) {
+            let groups = window.location.href.split("?")[1];
+            let perArtical = null;
+            if (groups.split("&")) {
+              perArtical = groups.split("&")[1];
+              groups = groups.split("&")[0];
+            }
+
+            $("#sub-title").text(mapTitle.find((e) => e.key === groups).title);
+            $("#subject").text(mapTitle.find((e) => e.key === groups).title);
+            let titleId = [];
+            list.filter((el, index) => {
+              if (el.group === groups) {
+                $("#items")
+                  .prepend(`<div class="col-lg-4 d-flex justify-content-center"><a class="d-flex align-items-stretch" href="?${
+                  el.group
+                }&${index}"><div class="bg-white rounded m-2 research-card">
+                  <div class="position-relative research-column sub-column">
+                    <img
+                      class="img-fluid rounded-top"
+                      src="${convertImageUrl(el.image)}"
+                      alt=""
+                    />
+                  </div>
+                  <div class="text-left py-4 px-3 column-text artical-title">
+                    <p id="title-${index}">${el.title}</p>
+                  </div>
+                  </div></a></div>`);
+
+                // var element = document.getElementById(`title-${index}`);
+                // limitTextLines(element, 5);
+
+                if (index != perArtical) {
+                  let otherName = `<p style="color: #3c96d7" class="mb-0 px-2 py-2">${trimText(
+                    el.title,
+                    5
+                  )}</p>`;
+                  $("#otherResearch").prepend(
+                    `<a href="?${el.group}&${index}"><div class="d-inline-flex align-items-center courses-list research-list mb-2"><span class="m-1 course-list-id"></span>${otherName}</div></a>`
+                  );
+                }
+              }
+              if (perArtical == index) {
+                $("#articalName").text(el.title);
+                $("#articalImg").append(
+                  `<img src="${convertImageUrl(el.image)}"/>`
+                );
+                $("#articalContent").text(`${el.content}`);
+                if (el.link) {
+                  $("#atricalLink").attr("href", el.link);
+                  $("#atricalLink").text(`Full paper: ${el.link}`);
+                }
+              }
+            });
+
+            // $(window).resize(function () {
+            //   titleId.forEach((el) => {
+            //     limitTextLines(document.getElementById(el), 9);
+            //   });
+            // });
+          }
+        },
+      });
+    });
+  </script>
+</html>

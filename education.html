@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>MEDINOVA - Hospital Website Template</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta content="Free HTML Templates" name="keywords" />
+    <meta content="Free HTML Templates" name="description" />
+
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon" />
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;700&family=Roboto:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Icon Font Stylesheet -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet" />
+    <link
+      href="lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet" />
+  </head>
+
+  <body>
+    <!-- Navbar Start -->
+    <div id="navbar"></div>
+    <!-- Navbar End -->
+
+    <!-- Education Summary Start -->
+    <div class="container-fluid main-contain" id="summary">
+      <div class="container" style="flex: 1">
+        <div class="text-center mx-auto mb-5">
+          <p class="d-inline-block page-title">Courses</p>
+        </div>
+        <div class="row g-5 mb-5 d-flex" id="courses"></div>
+      </div>
+    </div>
+    <!-- Education Summary End -->
+
+    <!-- Courses Start -->
+    <div class="container-fluid py-5 main-contain" id="partOfcourse">
+      <div class="container d-flex flex-row" style="flex: 1">
+        <div style="margin-right: 2em; min-width: 50vw">
+          <div class="mx-auto mb-3">
+            <p class="d-inline-block page-title" id="course_id"></p>
+          </div>
+          <h2 id="course_name"></h2>
+          <p id="course_intro"></p>
+        </div>
+        <div class="d-flex flex-column">
+          <div>
+            <div class="mx-auto mb-3">
+              <p class="d-inline-block page-title">Courses</p>
+            </div>
+            <div id="otherCourse"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Courses End -->
+
+    <!-- Footer Start -->
+    <div id="footer"></div>
+    <!-- Footer End -->
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"
+      ><i class="bi bi-arrow-up"></i
+    ></a>
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="lib/tempusdominus/js/moment.min.js"></script>
+    <script src="lib/tempusdominus/js/moment-timezone.min.js"></script>
+    <script src="lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+    <script src="js/helper/formatTSV.js"></script>
+    <script src="js/helper/trimText.js"></script>
+  </body>
+  <script>
+    $(function () {
+      $("#navbar").load("navbar.html");
+      $("#footer").load("footer.html");
+
+      $.ajax({
+        type: "GET",
+        url: "file/courses.tsv",
+        success: function (data) {
+          let list = JSON.parse(formatTsv(data));
+          if (window.location.href.split("?")[1]) {
+            $("#summary").hide();
+            $("#partOfcourse").show();
+            let id = window.location.href.split("?")[1];
+            $("#course_id").text(id);
+            list.find((el) => {
+              if (el.courses_id === id) {
+                $("#course_name").text(el.courses_name);
+                $("#course_intro").text(el.courses_intro);
+              } else {
+                let otherId = `<span class="m-1 course-list-id">${el.courses_id}</span>`;
+                let otherName = `<p style="color: #3c96d7" class="mb-0 px-2">${el.courses_name}</p>`;
+                $("#otherCourse").append(
+                  `<a href="?${el.courses_id}"><div class="d-inline-flex align-items-center courses-list mb-2">${otherId}${otherName}</div></a>`
+                );
+              }
+            });
+            return;
+          }
+
+          $("#summary").show();
+          $("#partOfcourse").hide();
+
+          let courseId = [];
+
+          list.forEach((el) => {
+            courseId.push(`text-${el.courses_id}`);
+            let courseNameHtml = `<div class="d-flex align-items-center justify-content-center rounded-circle mb-2 mt-3 course-bg"><h4 class="course-name">${el.courses_id}</h4></div>`;
+            let courseTitleHtml = `<h4 class="text-white mx-2 course-title">${el.courses_name}</h4>`;
+            let courseIntroHtml = `<div id="text-${el.courses_id}"><p class="course-des mx-3">${el.courses_intro}</p></div>`;
+            $("#courses").append(
+              `<div class="col-lg-4 courses-card"><a href="education.html?${el.courses_id}"><div class="course-item rounded d-flex flex-column align-items-center text-center">${courseNameHtml}${courseTitleHtml}${courseIntroHtml}</div></a><hr class="edu-card-hr"></div>`
+            );
+            var element = document.getElementById(`text-${el.courses_id}`);
+            limitTextLines(element, 3);
+          });
+
+          $(window).resize(function() {
+            courseId.forEach((el) => {
+              limitTextLines(document.getElementById(el), 3);
+            })
+          })
+        },
+      });
+    });
+  </script>
+</html>

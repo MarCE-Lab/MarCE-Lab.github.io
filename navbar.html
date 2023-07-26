@@ -1,0 +1,111 @@
+<div class="sticky-top">
+  <div class="container-fluid bg-white shadow-sm">
+    <div class="container">
+      <nav
+        class="navbar navbar-expand-lg bg-white navbar-light py-3 py-lg-2 justify-content-between"
+      >
+        <a href="index.html" class="navbar-brand d-flex flex-row align-items-end logo-1">
+          <img src="img/lab-logo.webp"/>
+          <h1 class="m-0" style="line-height: 1;">
+            MarCE <span>Lab.</span>
+          </h1>
+        </a>
+        <a href="https://www.ce.ntu.edu.tw/en/home/" class="navbar-brand logo-2">
+          <img src="img/logo.webp"/>
+        </a>
+      </nav>
+    </div>
+  </div>
+
+  <div class="container-fluid navbar-bg-color">
+    <div class="row justify-content-center mx-3">
+      <nav class="navbar navbar-expand-lg">
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarCollapse"
+          aria-controls="navbarCollapse"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"><i class="bi bi-list"></i></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+          <div class="navbar-nav mx-auto py-0">
+            <div>
+              <a href="index.html" class="nav-item nav-link px-4" id="index"
+                >Home</a
+              >
+            </div>
+            <div class="btn-border">
+              <a
+                href="people.html"
+                class="nav-item nav-link px-4"
+                id="people"
+                >People</a
+              >
+            </div>
+            <div class="btn-border">
+              <a
+                href="research.html"
+                class="nav-item nav-link px-4"
+                id="research"
+                >Research</a
+              >
+            </div>
+            <div class="btn-border">
+              <a
+                href="publications.html"
+                class="nav-item nav-link px-4"
+                id="publications"
+                >Publications</a
+              >
+            </div>
+            <div class="btn-border">
+              <a href="honors.html" class="nav-item nav-link px-4" id="honors">Honors and Awards</a>
+            </div>
+            <div class="btn-border">
+              <a href="education.html" class="nav-item nav-link px-4" id="education">Education</a>
+            </div>
+            <div class="btn-border">
+              <a href="contact.html" class="nav-item nav-link px-4" id="contact">Contact</a>
+            </div>
+            <!-- <div class="nav-item dropdown px-5 right-border">
+              <a
+                href="#"
+                class="nav-link dropdown-toggle"
+                data-bs-toggle="dropdown"
+                >Pages</a
+              >
+              <div class="dropdown-menu m-0">
+                <a href="blog.html" class="dropdown-item">Blog Grid</a>
+                <a href="detail.html" class="dropdown-item">Blog Detail</a>
+                <a href="team.html" class="dropdown-item">The Team</a>
+                <a href="testimonial.html" class="dropdown-item"
+                  >Testimonial</a
+                >
+                <a href="appointment.html" class="dropdown-item"
+                  >Appointment</a
+                >
+                <a href="search.html" class="dropdown-item">Search</a>
+              </div>
+            </div> -->
+          </div>
+        </div>
+      </nav>
+    </div>
+  </div>
+</div>
+<script>
+  $(function () {
+    let part = window.location.pathname.split("/");
+    if (part[part.length - 1] === "") {
+      $("#index").addClass("active");
+      return;
+    }
+    if (part[part.length - 1]) {
+      $(`#${part[part.length - 1].replace(".html", "")}`).addClass("active");
+    }
+  });
+</script>

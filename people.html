@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>MarCE Lab.</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta content="Free HTML Templates" name="keywords" />
+    <meta content="Free HTML Templates" name="description" />
+
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon" />
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;700&family=Roboto:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Icon Font Stylesheet -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet" />
+    <link
+      href="lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet" />
+  </head>
+
+  <body>
+    <!-- Navbar Start -->
+    <div id="navbar"></div>
+    <!-- Navbar End -->
+
+    <div class="container-fluid py-5 main-contain">
+      <div class="container" style="flex: 1">
+        <div class="mx-auto mb-3">
+          <p class="d-inline-block page-title">Director</p>
+        </div>
+        <div class="row">
+          <div class="col-lg-3">
+            <img class="mb-2" src="img/professor.webp" style="width: 230px" />
+          </div>
+          <div class="des col-lg-9">
+            <h2>Rih-Teng Wu</h2>
+            <h2>Assistant Professor of Civil Engineering</h2>
+            <div class="experience">
+              <p>Ph.D., Civil Engineering, Purdue University, 2020</p>
+              <p>M.S., Eletrical Engineering, Purdue University, 2019</p>
+              <p>M.S., Civil Engineering, National Taiwan University, 2014</p>
+              <p>B.S., Civil Engineering, National Taiwan University, 2011</p>
+            </div>
+          </div>
+          <div class="introduce col-lg-12">
+            <p>
+              Welcome to professor Rih-Teng Wu's Laboratory at National Taiwan
+              University. Our group conducts interdisciplinary research to
+              develop data analytics tools and artificial intelligence-based
+              solutions for condition assessment and design of structures, which
+              are key elements toward achieving sustainable and resilient civil
+              infrastructure systems. Using our proposed methodologies, we are
+              one step closer to implementing the vision of smart cities.
+            </p>
+          </div>
+        </div>
+        <div class="mx-auto mb-3 mt-4">
+          <p class="d-inline-block page-title">Graduate Students</p>
+        </div>
+        <div id="graduate"></div>
+
+        <!-- Former students section (如要顯示 former students 請把下方註解拿掉) -->
+        <!-- <div class="mx-auto mb-3 mt-4">
+          <p class="d-inline-block page-title">Former Students</p>
+        </div>
+        <div id="former"></div> -->
+      </div>
+    </div>
+
+    <!-- Footer Start -->
+    <div id="footer"></div>
+    <!-- Footer End -->
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"
+      ><i class="bi bi-arrow-up"></i
+    ></a>
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="lib/tempusdominus/js/moment.min.js"></script>
+    <script src="lib/tempusdominus/js/moment-timezone.min.js"></script>
+    <script src="lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+    <script src="js/helper/formatTSV.js"></script>
+    <script src="js/helper/convertImageUrl.js"></script>
+  </body>
+  <script>
+    $(function () {
+      $("#navbar").load("navbar.html");
+      $("#footer").load("footer.html");
+      $.ajax({
+        type: "GET",
+        url: "file/people.tsv",
+        success: function (data) {
+          let list = JSON.parse(formatTsv(data));
+
+          list.forEach((el) => {
+            $(`#${el.status}`).append(
+              `<div class="row mt-3"><div class="col-lg-3"><img class="mb-2" src="${convertImageUrl(
+                el.image
+              )}" style="width: 200px" /></div><div class="des col-lg-9"><h2>${
+                el.student_name
+              }</h2><h2>${el.title}</h2><div class="introduce"><p>${
+                el.description
+              }</p></div></div></div>`
+            );
+          });
+        },
+      });
+    });
+  </script>
+</html>
