@@ -242,7 +242,7 @@
                   <div class="position-relative research-column sub-column">
                     <img
                       class="img-fluid rounded-top"
-                      src="${convertImageUrl(el.image)}"
+                      src="${el.image}"
                       alt=""
                     />
                   </div>
@@ -267,7 +267,7 @@
               if (perArtical == index) {
                 $("#articalName").text(el.title);
                 $("#articalImg").append(
-                  `<img src="${convertImageUrl(el.image)}"/>`
+                  `<img src="${el.image}"/>`
                 );
                 $("#articalContent").text(`${el.content}`);
                 if (el.link) {
