@@ -13,6 +13,7 @@ h6 p {
     font-family: HelveticaMedium, sans-serif;
 }
 
+
 :root {
     --primary: #13C5DD;
     --secondary: #354F8E;
@@ -781,4 +782,69 @@ li:before {
 #summary {
     margin-top: 5em;
     background: center / contain url(../img/contact-pattern.webp);
+}
+
+.gallery {
+    position: relative;
+}
+
+.gallery_images {
+    position: relative;
+    width: 100%;
+}
+
+.gallery_images img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.gallery_caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent black background */
+    color: white;
+    padding: 10px;
+    text-align: left;
+}
+
+/* Hide the images by default */
+.mySlides {
+    display: none;
+}
+
+/* Add a pointer when hovering over the thumbnail images */
+.cursor {
+    cursor: pointer;
+}
+
+/* Next & previous buttons */
+.prev,
+.next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    margin-top: -50px;
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+    -webkit-user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover,
+.next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
 }
