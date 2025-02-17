@@ -786,6 +786,16 @@ li:before {
 
 .gallery {
     position: relative;
+    width: 60%;
+    margin: 0 auto;
+}
+
+@media (max-width: 700px) {
+    .gallery {
+        position: relative;
+        width: 95%;
+        margin: 0 auto;
+    }
 }
 
 .gallery_images {
@@ -804,23 +814,12 @@ li:before {
     bottom: 0;
     left: 0;
     width: 100%;
-    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent black background */
+    background-color: rgba(0, 0, 0, 0.7);
     color: white;
     padding: 10px;
     text-align: left;
 }
 
-/* Hide the images by default */
-.mySlides {
-    display: none;
-}
-
-/* Add a pointer when hovering over the thumbnail images */
-.cursor {
-    cursor: pointer;
-}
-
-/* Next & previous buttons */
 .prev,
 .next {
     cursor: pointer;
@@ -837,13 +836,11 @@ li:before {
     -webkit-user-select: none;
 }
 
-/* Position the "next button" to the right */
 .next {
     right: 0;
     border-radius: 3px 0 0 3px;
 }
 
-/* On hover, add a black background color with a little bit see-through */
 .prev:hover,
 .next:hover {
     background-color: rgba(0, 0, 0, 0.8);
